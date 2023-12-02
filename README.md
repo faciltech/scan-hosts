@@ -35,6 +35,8 @@ chmod +x scan_hosts.sh
 ```
 OBS: Uma outra boa dica é mover o arquivo do script para o diretório /usr/bin , dessa forma podemos utilizar de forma direta no terminal.
 ## 🧐 Como usar o script?
+Caso digite sem o argumento da rede, recebe a seguinte resposta:
+![image](https://github.com/faciltech/scan-hosts/assets/3409713/77ed03de-3e44-4d47-8cad-315db806452d)
 
 Você irá digitar ```./scan_hosts.sh 192.168.0``` 
 
