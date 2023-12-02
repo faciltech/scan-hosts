@@ -36,12 +36,14 @@ chmod +x scan_hosts.sh
 OBS: Uma outra boa dica é mover o arquivo do script para o diretório /usr/bin , dessa forma podemos utilizar de forma direta no terminal.
 ## 🧐 Como usar o script?
 
-Você irá digitar ```./scan_hosts.sh``` 
-  
+Você irá digitar ```./scan_hosts.sh 192.168.0``` 
+
+![image](https://github.com/faciltech/scan-hosts/assets/3409713/6bbac0ba-2169-49c3-ae17-e090da10beae)
 <img alt="faciltech" src="20230118_194341.gif"/>
 ## 🎓 Linguagem
 
 O utilitário é desenvolvido em linguagem shellscript, necessita que o nmap esteja instalado na maquina.
+![image](https://github.com/faciltech/scan-hosts/assets/3409713/5fe41cd5-1f62-4aa2-a234-26d3d31efe65)
 
 <!-- AUTO-GENERATED-CONTENT:END -->
 
