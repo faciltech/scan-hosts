@@ -5,7 +5,7 @@
   </a>
 </p>
 <h1 align="center">
-  Scan - Ferramenta para enumeraçao de hosts e portas.
+  Scan-Hosts - Ferramenta para enumeraçao de hosts e portas.
 </h1>
 
 A ideia desse script simples otimizar tempo, utilizamos o Nmap para fazer a verificaçao dos Hosts de um segmento de rede, em seguida ele identifica todos os hosts Up e cria uma pasta para cada Host.
