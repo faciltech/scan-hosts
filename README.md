@@ -47,6 +47,8 @@ Você irá digitar ```./scan_hosts.sh 192.168.0```
 O utilitário é desenvolvido em linguagem shellscript, necessita que o nmap esteja instalado na maquina.
 ![image](https://github.com/faciltech/scan-hosts/assets/3409713/5fe41cd5-1f62-4aa2-a234-26d3d31efe65)
 
+![image](https://github.com/faciltech/scan-hosts/assets/3409713/e96daa5f-060d-41bd-8588-206c0e09335e)
+
 <!-- AUTO-GENERATED-CONTENT:END -->
 
 
