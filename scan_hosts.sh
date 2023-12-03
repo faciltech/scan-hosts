@@ -12,17 +12,21 @@ then
         echo "OBS: Necessita de Nmap"
         exit 1
 fi
-
+echo""
 echo -e "\e[31m#### SCANEANDO HOSTS ####\e[0m"
+echo "DIGITE O NOME DO PROJETO: "
+read diretorio
+mkdir $diretorio
+#cd $diretorio
 hosts=$(sudo nmap -sn $1.0/24 | grep -oE '\b([0-9]{1,3}\.){3}[0-9]{1,3}\b')
 for i in $hosts;
 do
         echo $i
-        mkdir $i
+        mkdir $diretorio/$i
 done
 for i in $hosts;
 do
-        cd $i
+      #  cd $i
         echo ""
         echo -e "\e[31m#### SCANEANDO PORTAS DO HOST $i ####\e[0m"
         portas=$(sudo nmap -sS --open --source-port 443 -p- -Pn $i | grep '^[0-9]' | awk -F'/' '{print $1}'| xargs | sed 's/ /,/g')
@@ -33,9 +37,11 @@ do
             printf "\e[1;33;40mPortas abertas do Host $i \e[0m: \e[1;32m$portas\e[0m"                                                                                                                                                      
             echo " "                                                                                                                                                                                                                       
             echo -e "\e[31m#### Informações dos serviços das Portas do Host $i ####\e[0m"                                                                                                                                                  
-            nmap -sC -sV -p $portas -Pn $i > portas_servicos.txt                                                                                                                                                                           
-            echo "Os serviços das portas foram salvos no arquivo /$i/portas_servicos.txt"                                                                                                                                                  
+            nmap -sC -sV -p $portas -Pn $i > $diretorio/$i/portas_servicos.txt                                                                                                                                                                           
+            echo "Os serviços das portas foram salvos no arquivo $diretorio/$i/portas_servicos.txt"
+#	    cd ..                                                                                                                                                  
         fi                                                                                                                                                                                                                                 
                                                                                                                                                                                                                                            
-        cd ..                                                                                                                                                                                                                              
+       
+	                                                                                                                                                                                                                              
 done 
