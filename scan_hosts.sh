@@ -1,47 +1,41 @@
-<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
-<p align="center">
-  <a href="https://www.faciltech.info">
-    <img alt="faciltech" src="https://yt3.ggpht.com/ytc/AAUvwng4KJs5t62nl2AvqDVOuXepKCSZp-l9_AQlsKBbwg=s176-c-k-c0x00ffffff-no-rj-mo" width="160" />
-  </a>
-</p>
-<h1 align="center">
-  Scan - Ferramenta para enumeraçao de portas.
-</h1>
+#!/bin/bash
+figlet SCAN-HOSTS
+echo "Autor: Eduardo Amaral - eduardo4maral@protonmail.com"
+echo "You Tube : https://www.youtube.com/faciltech"
+echo "github   : https://github.com/faciltech"
+echo "Linkedin : https://www.linkedin.com/in/eduardo-a-02194451/"
+if [ -z "$1" ]
+then
+        echo "Modo de Uso: ./scan.sh 192.168.0"
+        echo "Apenas ID da rede (3 primeiros numeros, exemplo 192.168.0)."
+        echo "ATENÇÃO: Só portas TCP"
+        echo "OBS: Necessita de Nmap"
+        exit 1
+fi
 
-A ideia desse script simples otimizar tempo, utilizamos o Nmap para fazer a verificaçao das portas, em seguida trás as portas abertas e já enumera elas com alguns scripts do nmap.
-## 🚀 Por que usa-lo?
+echo -e "\e[31m#### SCANEANDO HOSTS ####\e[0m"
+hosts=$(sudo nmap -sn $1.0/24 | grep -oE '\b([0-9]{1,3}\.){3}[0-9]{1,3}\b')
+for i in $hosts;
+do
+        echo $i
+        mkdir $i
+done
+for i in $hosts;
+do
+        cd $i
+        echo ""
+        echo -e "\e[31m#### SCANEANDO PORTAS DO HOST $i ####\e[0m"
+        portas=$(sudo nmap -sS --open --source-port 443 -p- -Pn $i | grep '^[0-9]' | awk -F'/' '{print $1}'| xargs | sed 's/ /,/g')
 
-Muitas vezes precisamos de um script para um determinado serviço, durante a busca das certificaçoes DCPT e OSCP, resolvi otimizar meu tempo, ao invés de dar comandos.. 
-  
-1.  **Como instalar?**
-
-    Navegue dentro de seu sistema, escolha o local e execute no terminal o comando abaixo.
-
-    ``` 
-        git clone https://github.com/faciltech/scan.git
-        Cloning into 'scan'...
-        remote: Enumerating objects: 10, done.
-        remote: Counting objects: 100% (10/10), done.
-        remote: Compressing objects: 100% (10/10), done.
-        remote: Total 10 (delta 1), reused 0 (delta 0), pack-reused 0
-        Receiving objects: 100% (10/10), 19.14 KiB | 612.00 KiB/s, done.
-        Resolving deltas: 100% (1/1), done.
-      ```
-
-2.  **Conceda permissão para o arquivo!**
-```
-chmod +x scan.sh
-```
-OBS: Uma outra boa dica é mover o arquivo do script para o diretório /usr/bin , dessa forma podemos utilizar de forma direta no terminal.
-## 🧐 Como usar o script?
-
-Você irá digitar ```./scan.sh``` 
-  
-<img alt="faciltech" src="20230118_194341.gif"/>
-## 🎓 Linguagem
-
-O utilitário é desenvolvido em linguagem shellscript, necessita que o nmap esteja instalado na maquina.
-
-<!-- AUTO-GENERATED-CONTENT:END -->
-
-
+        if [ -z "$portas" ]; then
+            echo "Sem portas abertas no Host $i"
+        else
+            printf "\e[1;33;40mPortas abertas do Host $i \e[0m: \e[1;32m$portas\e[0m"                                                                                                                                                      
+            echo " "                                                                                                                                                                                                                       
+            echo -e "\e[31m#### Informações dos serviços das Portas do Host $i ####\e[0m"                                                                                                                                                  
+            nmap -sC -sV -p $portas -Pn $i > portas_servicos.txt                                                                                                                                                                           
+            echo "Os serviços das portas foram salvos no arquivo /$i/portas_servicos.txt"                                                                                                                                                  
+        fi                                                                                                                                                                                                                                 
+                                                                                                                                                                                                                                           
+        cd ..                                                                                                                                                                                                                              
+done 
