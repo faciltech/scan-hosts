@@ -39,12 +39,15 @@ Caso digite sem o argumento da rede, recebe a seguinte resposta:
 ![image](https://github.com/faciltech/scan-hosts/assets/3409713/77ed03de-3e44-4d47-8cad-315db806452d)
 
 Você irá digitar ```./scan_hosts.sh 192.168.0``` 
-
+Ele vai perguntar o nome do projeto:
+Em seguida o script faz o scan de hosts vivos.
 ![image](https://github.com/faciltech/scan-hosts/assets/3409713/6bbac0ba-2169-49c3-ae17-e090da10beae)
 <img alt="faciltech" src="20230118_194341.gif"/>
 ## 🎓 Linguagem
 
 O utilitário é desenvolvido em linguagem shellscript, necessita que o nmap esteja instalado na maquina.
+![image](https://github.com/faciltech/scan-hosts/assets/3409713/7b7c1d7b-bfe4-469c-8e1d-8a4e1844e480)
+
 ![image](https://github.com/faciltech/scan-hosts/assets/3409713/5fe41cd5-1f62-4aa2-a234-26d3d31efe65)
 
 ![image](https://github.com/faciltech/scan-hosts/assets/3409713/e96daa5f-060d-41bd-8588-206c0e09335e)
