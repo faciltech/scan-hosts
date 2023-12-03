@@ -8,8 +8,8 @@
   Scan-Hosts - Ferramenta para enumeraçao de hosts e portas.
 </h1>
 
-A ideia desse script simples otimizar tempo, utilizamos o Nmap para fazer a verificaçao dos Hosts de um segmento de rede, em seguida ele identifica todos os hosts Up e cria uma pasta para cada Host.
-Em seguida, o script verifica as portas abertas e os serviços, mostrando as portas abertas na tela, se salvando os serviços destas portas em um arquivo .txt dentro da respectiva pasta.
+A ideia desse script simples otimizar tempo, utilizamos o Nmap para fazer a verificaçao dos Hosts de um segmento de rede,voce escolhe um nome para o projeto, ele cria uma pasta para o projeto e em seguida ele identifica todos os hosts Up e cria uma subpasta para cada Host dentro do diretório pai.
+Em seguida, o script verifica as portas abertas e os serviços, mostrando as portas abertas na tela, se salvando os serviços destas portas em um arquivo .txt dentro da respectiva subpasta.
 ## 🚀 Por que usa-lo?
 
 Muitas vezes precisamos verificar em uma rede com muitos hosts, quais estão vivos e quais portas e serviços estão em execução. Dessa forma eu automatizei o processo, facilitando e trazendo de forma organizada os resultados.
