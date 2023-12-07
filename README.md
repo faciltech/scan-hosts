@@ -36,13 +36,26 @@ chmod +x scan_hosts.sh
 OBS: Uma outra boa dica é mover o arquivo do script para o diretório /usr/bin , dessa forma podemos utilizar de forma direta no terminal.
 ## 🧐 Como usar o script?
 Caso digite sem o argumento da rede, recebe a seguinte resposta:
-![image](https://github.com/faciltech/scan-hosts/assets/3409713/77ed03de-3e44-4d47-8cad-315db806452d)
+
+![image](https://github.com/faciltech/scan-hosts/assets/3409713/b5c3b44f-edc4-4953-b715-d213d0132f22)
 
 Você irá digitar ```./scan_hosts.sh 192.168.0``` 
 Ele vai perguntar o nome do projeto:
 Em seguida o script faz o scan de hosts vivos.
-![image](https://github.com/faciltech/scan-hosts/assets/3409713/6bbac0ba-2169-49c3-ae17-e090da10beae)
+![image](https://github.com/faciltech/scan-hosts/assets/3409713/232efccb-31b3-435a-aff6-46c3d68c373f)
 <img alt="faciltech" src="20230118_194341.gif"/>
+
+Também pode ser utilizado a opçao -l para passar uma lista de ips.
+
+Ex:
+
+![image](https://github.com/faciltech/scan-hosts/assets/3409713/5ceff1aa-ee87-490f-bc2d-33273d324566)
+
+```
+./scan-hosts.sh -l lista_ips.txt
+```
+![image](https://github.com/faciltech/scan-hosts/assets/3409713/b7693cb5-5963-4fd1-9525-4a8e27380610)
+
 ## 🎓 Linguagem
 
 O utilitário é desenvolvido em linguagem shellscript, necessita que o nmap esteja instalado na maquina.
