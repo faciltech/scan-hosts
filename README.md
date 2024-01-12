@@ -37,12 +37,12 @@ OBS: Uma outra boa dica é mover o arquivo do script para o diretório /usr/bin 
 ## 🧐 Como usar o script?
 Caso digite sem o argumento da rede, recebe a seguinte resposta:
 
-![image](https://github.com/faciltech/scan-hosts/assets/3409713/b5c3b44f-edc4-4953-b715-d213d0132f22)
+![image](https://github.com/faciltech/scan-hosts/assets/3409713/7f25fb64-fda4-4f10-a363-51388d5d7434)
 
-Você irá digitar ```./scan_hosts.sh 192.168.0``` 
+Você irá digitar ```./scan_hosts.sh -r 192.168.0``` 
 Ele vai perguntar o nome do projeto:
 Em seguida o script faz o scan de hosts vivos.
-![image](https://github.com/faciltech/scan-hosts/assets/3409713/232efccb-31b3-435a-aff6-46c3d68c373f)
+![image](https://github.com/faciltech/scan-hosts/assets/3409713/9bfe296e-1eac-4e0c-b040-910a154c1637)
 <img alt="faciltech" src="20230118_194341.gif"/>
 
 Também pode ser utilizado a opçao -l para passar uma lista de ips.
