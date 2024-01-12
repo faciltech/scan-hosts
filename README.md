@@ -56,6 +56,11 @@ Ex:
 ```
 ![image](https://github.com/faciltech/scan-hosts/assets/3409713/b7693cb5-5963-4fd1-9525-4a8e27380610)
 
+```
+./scan-hosts.sh -t <dominio/ip>
+```
+![image](https://github.com/faciltech/scan-hosts/assets/3409713/bfe97edc-f37e-4946-9df4-ecbb9088f4c1)
+
 ## 🎓 Linguagem
 
 O utilitário é desenvolvido em linguagem shellscript, necessita que o nmap esteja instalado na maquina.
